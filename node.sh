@@ -21,14 +21,10 @@
 
 nohup ./node \
   --chain testnet \
-  --wasm-execution compiled \
   --execution wasm \
-  --bootnodes "/dns/farm-rpc.subspace.network/tcp/30333/p2p/12D3KooWPjMZuSYj35ehced2MTJFf95upwpHKgKUrFRfHwohzJXr" \
-  --rpc-cors all \
-  --rpc-methods unsafe \
-  --ws-external \
+  --unsafe-pruning \
+  --pruning 1024 \
+  --keep-blocks 1024 \
   --validator \
-  --telemetry-url "wss://telemetry.polkadot.io/submit/ 1" \
-  --telemetry-url "wss://telemetry.subspace.network/submit 1" \
-  --name INSERT_YOUR_ID \
+  --name INSERT_YOUR_ID
   > node.log 2>&1 &
